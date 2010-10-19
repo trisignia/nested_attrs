@@ -1,0 +1,15 @@
+  <p>
+    Team Name:
+    <%= f.text_field :name %>
+  </p>
+
+  <% f.fields_for :players do |p| %>
+    <p>
+      Player Name:
+      <%= p.text_field :name %>
+    <p>
+  <% end %>
+
+  <p>
+    <%= f.submit %>
+  </p>
