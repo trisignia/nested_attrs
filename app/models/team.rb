@@ -13,5 +13,5 @@ class Team < ActiveRecord::Base
               end
             end
 
-  accepts_nested_attributes_for :players
+  accepts_nested_attributes_for :players, :users
 end
