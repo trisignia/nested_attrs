@@ -475,3 +475,636 @@ Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 10:23:10) [POST]
   [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-19 14:23:10', '2010-10-19 14:23:10')[0m
 Redirected to http://test.host/teams/1
 Completed in 4ms (DB: 0) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-20 01:32:01', '2010-10-20 01:32:01')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, 1, '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;35;1mTeam Load (0.1ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, 1, '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;35;1mTeam Load (0.1ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, 1, '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mTeam Load (0.1ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) LIMIT 1[0m
+  [4;36;1mTeam Create (0.3ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, 1, '2010-10-20 01:32:02', '2010-10-20 01:32:02')[0m
+  [4;35;1mTeam Load (0.1ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" WHERE ("interactions".team_id = 1) [0m
+  [4;36;1mInteraction Load (0.3ms)[0m   [0;1mSELECT * FROM "interactions" WHERE ("interactions".team_id = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-20 01:32:05', '2010-10-20 01:32:05')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"players_attributes"=>[{"name"=>"John Doe"}], "name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 63ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"players_attributes"=>[{"name"=>"John Doe"}], "name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"players_attributes"=>[{"name"=>"John Doe"}], "name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"players_attributes"=>[{"name"=>"John Doe"}], "name"=>"Tigers"}}
+  [4;36;1mTeam Create (2.8ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 33ms (DB: 4) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mTeam Load (0.1ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 2))) [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"players_attributes"=>[{"name"=>"John Doe"}], "name"=>"Tigers"}}
+  [4;35;1mTeam Create (1.2ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mInteraction Create (0.3ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 62ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"players_attributes"=>[{"name"=>"John Doe"}], "name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("team_id", "user_id", "role_id", "created_at", "updated_at") VALUES(1, 1, NULL, '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 14ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.3ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 5ms (DB: 0) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-19 21:32:06) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-20 01:32:06', '2010-10-20 01:32:06')[0m
+Redirected to http://test.host/teams/1
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:36', '2010-10-29 21:59:36', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:36', '2010-10-29 21:59:36', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:36', '2010-10-29 21:59:36', 1, 1, 1)[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) LIMIT 1[0m
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:36', '2010-10-29 21:59:36')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:36', '2010-10-29 21:59:36', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" WHERE ("interactions".team_id = 1) [0m
+  [4;36;1mInteraction Load (0.2ms)[0m   [0;1mSELECT * FROM "interactions" WHERE ("interactions".team_id = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 41ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.6ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 12ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+  [4;35;1mInteraction Create (0.1ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 14ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 2))) [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (1.0ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (1.6ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 21:59:38', '2010-10-29 21:59:38', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 14ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.7ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+Redirected to http://test.host/teams/1
+Completed in 7ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 17:59:38) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 21:59:38', '2010-10-29 21:59:38')[0m
+Redirected to http://test.host/teams/1
+Completed in 6ms (DB: 0) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.5ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:38', '2010-10-29 22:02:38', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mTeam Create (37.0ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:38', '2010-10-29 22:02:38', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:38', '2010-10-29 22:02:38')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:39', '2010-10-29 22:02:39')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:39', '2010-10-29 22:02:39', 1, 1, 1)[0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) LIMIT 1[0m
+  [4;36;1mTeam Create (0.5ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:39', '2010-10-29 22:02:39')[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:39', '2010-10-29 22:02:39')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:39', '2010-10-29 22:02:39', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.5ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" WHERE ("interactions".team_id = 1) [0m
+  [4;36;1mInteraction Load (0.4ms)[0m   [0;1mSELECT * FROM "interactions" WHERE ("interactions".team_id = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (7.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 66ms (DB: 10) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 12ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mUser Create (2.7ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 15ms (DB: 4) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+  [4;35;1mInteraction Create (0.1ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 2))) [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;35;1mInteraction Create (1.5ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 12ms (DB: 3) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:41', '2010-10-29 22:02:41', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 11ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.3ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+Redirected to http://test.host/teams/1
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:02:41) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:41', '2010-10-29 22:02:41')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 22:02:57', '2010-10-29 22:02:57')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.7ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:58', '2010-10-29 22:02:58', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mTeam Create (0.9ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mInteraction Create (0.3ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:58', '2010-10-29 22:02:58', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:58', '2010-10-29 22:02:58', 1, 1, 1)[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mSQL (4.6ms)[0m   [0mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) LIMIT 1[0m
+  [4;36;1mTeam Create (0.6ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:02:58', '2010-10-29 22:02:58')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:02:58', '2010-10-29 22:02:58', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" WHERE ("interactions".team_id = 1) [0m
+  [4;36;1mInteraction Load (0.2ms)[0m   [0;1mSELECT * FROM "interactions" WHERE ("interactions".team_id = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.5ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 37ms (DB: 3) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;35;1mInteraction Create (0.7ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;35;1mInteraction Create (0.5ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 17ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;36;1mTeam Create (1.6ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+  [4;35;1mInteraction Create (0.1ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 15ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 2))) LIMIT 1[0m
+  [4;36;1mInteraction Load (0.2ms)[0m   [0;1mSELECT * FROM "interactions" LIMIT 1[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 2) [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+  [4;35;1mInteraction Create (0.1ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 12ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+  [4;36;1mInteraction Create (2.6ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+  [4;35;1mInteraction Create (0.1ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:03:00', '2010-10-29 22:03:00', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 3) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:03:00) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:03:00', '2010-10-29 22:03:00')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 22:03:59', '2010-10-29 22:03:59')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.3ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:00', '2010-10-29 22:04:00', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mInteraction Create (1.3ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:00', '2010-10-29 22:04:00', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.5ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mTeam Create (12.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;35;1mInteraction Create (0.5ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:00', '2010-10-29 22:04:00', 1, 1, 1)[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".* FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 1))) LIMIT 1[0m
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:00', '2010-10-29 22:04:00')[0m
+  [4;36;1mInteraction Create (0.3ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:00', '2010-10-29 22:04:00', 1, 1, 1)[0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" WHERE ("interactions".team_id = 1) [0m
+  [4;36;1mInteraction Load (0.2ms)[0m   [0;1mSELECT * FROM "interactions" WHERE ("interactions".team_id = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM "roles" WHERE ("roles"."id" = 1) [0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mRole Create (0.4ms)[0m   [0mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES('player', '2010-10-29 22:04:01', '2010-10-29 22:04:01')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "interactions" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (3.8ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;35;1mInteraction Create (0.3ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.6ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 25ms (DB: 6) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "interactions" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 15ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;35;1mInteraction Create (0.3ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 17ms (DB: 2) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;36;1mInteraction Create (0.2ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+  [4;35;1mInteraction Create (0.1ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 11ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM "roles" WHERE ("roles"."name" = 'player') LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" INNER JOIN "interactions" ON "users".id = "interactions".user_id WHERE (("interactions".team_id = 1) AND ((interactions.role_id = 2))) [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 12ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers", "players_attributes"=>[{"name"=>"John Doe"}]}}
+  [4;35;1mTeam Create (0.4ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('John Doe', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+  [4;35;1mInteraction Create (0.2ms)[0m   [0mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+  [4;36;1mInteraction Create (0.1ms)[0m   [0;1mINSERT INTO "interactions" ("created_at", "updated_at", "role_id", "user_id", "team_id") VALUES('2010-10-29 22:04:02', '2010-10-29 22:04:02', 2, 1, 1)[0m
+Redirected to http://test.host/teams/1
+Completed in 13ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers&team%5Bplayers_attributes%5D%5B%5D%5Bname%5D=John+Doe]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+Redirected to http://test.host/teams/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "teams" [0m
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;36;1mTeam Create (0.4ms)[0m   [0;1mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+Redirected to http://test.host/teams/1
+Completed in 7ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
+
+
+Processing TeamsController#create (for 0.0.0.0 at 2010-10-29 18:04:02) [POST]
+  Parameters: {"team"=>{"name"=>"Tigers"}}
+  [4;35;1mTeam Create (0.7ms)[0m   [0mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES('Tigers', '2010-10-29 22:04:02', '2010-10-29 22:04:02')[0m
+Redirected to http://test.host/teams/1
+Completed in 4ms (DB: 1) | 302 Found [http://test.host/teams?team%5Bname%5D=Tigers]
